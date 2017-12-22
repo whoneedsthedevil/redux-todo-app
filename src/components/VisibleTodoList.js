@@ -9,6 +9,7 @@ const mapStateToProps = (
   { match: { params: { filter } } }
 ) => ({
   todos: getVisibleTodos(state, filter || 'all'),
+  sagaRequests: state.sagaRequests
 });
 
 

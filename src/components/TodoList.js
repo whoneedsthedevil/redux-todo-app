@@ -17,8 +17,11 @@ export default class TodoList extends Component {
 
   render() {
 
-  const { todos, onTodoClick, onTodoDelete, onTodoEdit, onLoadTags } = this.props
+  const { todos, sagaRequests, onTodoClick, onTodoDelete, onTodoEdit, onLoadTags } = this.props
   const { isEdit } = this.state
+
+
+
   	return <div>
   	  <ul>
 	    {todos.map(todo =>
@@ -43,7 +46,7 @@ export default class TodoList extends Component {
 	    )}
 	  </ul>
 
-      <div onClick={e => onLoadTags(1)}>Get redux-saga request (in console)</div>
+      <div onClick={e => onLoadTags(1)}>Click to get redux-saga request: { sagaRequests.task ? sagaRequests.task : 'empty' } </div>
       </div>;
 	}
 };
@@ -52,5 +55,6 @@ TodoList.propTypes = {
   onTodoClick: PropTypes.func.isRequired,
   onTodoDelete: PropTypes.func.isRequired,
   onTodoEdit: PropTypes.func.isRequired,
+  onLoadTags: PropTypes.func.isRequired
 };
 

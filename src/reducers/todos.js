@@ -14,9 +14,6 @@ const byId = (state = {}, action) => {
       if (state.id === action.id) {
         return { [action.id]: todo(state[action.id], action) }
       }
-    case 'LOAD_TAGS_SUCCESS':
-      console.log('%c Current task is:', 'color: DarkOrange', action.taskRequest.text)
-      return state;
 
     default:
       return state;
@@ -35,9 +32,10 @@ const allIds = (state = [], action) => {
   }
 };
 
+
 const todos = combineReducers({
   byId,
-  allIds,
+  allIds
 });
 
 
