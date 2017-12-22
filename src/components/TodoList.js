@@ -17,9 +17,10 @@ export default class TodoList extends Component {
 
   render() {
 
-  const { todos, onTodoClick, onTodoDelete, onTodoEdit } = this.props
+  const { todos, onTodoClick, onTodoDelete, onTodoEdit, onLoadTags } = this.props
   const { isEdit } = this.state
-  	return <ul>
+  	return <div>
+  	  <ul>
 	    {todos.map(todo =>
 	      isEdit === false ?
 		      <Todo 
@@ -40,7 +41,10 @@ export default class TodoList extends Component {
 	        </div>
 	      
 	    )}
-	  </ul>;
+	  </ul>
+
+      <div onClick={e => onLoadTags(1)}>Get redux-saga request (in console)</div>
+      </div>;
 	}
 };
 

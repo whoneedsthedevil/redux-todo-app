@@ -23,6 +23,7 @@ const todo = (state, action) => {
       if (state.id !== action.id) {
         return state;
       }
+      
     default:
       return state;
   }

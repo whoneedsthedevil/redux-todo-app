@@ -1,0 +1,7 @@
+{
+	"tasks": [{
+		"id": 1,
+		"text": "Learn React",
+		"completed": false
+	}]
+}

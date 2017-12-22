@@ -1,7 +1,9 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import todoApp from './reducers';
 import { loadState, saveState } from './localStorage';
 import throttle from 'lodash/throttle';
+import createSagaMiddleware from 'redux-saga';
+import rootSaga from './saga';
 
 const addLoggingToDispatch = (store) => {
   const rawDispatch = store.dispatch;
@@ -23,7 +25,10 @@ const addLoggingToDispatch = (store) => {
 const configureStore = () => {
 
 	const persistedState = loadState();
-	const store = createStore(todoApp, persistedState);
+
+  const sagaMiddleware = createSagaMiddleware();
+	const store = createStore(todoApp, persistedState, applyMiddleware(sagaMiddleware));
+  sagaMiddleware.run(rootSaga);
 
     if (process.env.NODE_ENV !== 'production') {
       store.dispatch = addLoggingToDispatch(store);

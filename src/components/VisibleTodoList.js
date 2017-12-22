@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { toggleTodo, deleteTodo, editTodo } from '../actions';
+import { toggleTodo, deleteTodo, editTodo, loadTags } from '../actions';
 import { getVisibleTodos } from '../reducers'
 import TodoList from './TodoList';
 
@@ -22,6 +22,9 @@ const mapDispatchToProps = (dispatch) => ({
   onTodoEdit(id, text){
     dispatch(editTodo(id, text));
   },
+  onLoadTags(id){
+    dispatch(loadTags(id))
+  }
 });
 
 const VisibleTodoList = withRouter(connect(

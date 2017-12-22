@@ -22,3 +22,13 @@ export const deleteTodo = (id) => ({
     type: 'DELETE_TODO',
     id,
 });
+
+export const loadTags = (id) => ({
+    type: 'LOAD_TAGS',
+    id,
+});
+
+export const loadTagsSuccess = (taskRequest) => ({
+    type: 'LOAD_TAGS_SUCCESS',
+    taskRequest,
+});
