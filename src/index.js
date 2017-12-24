@@ -1,10 +1,11 @@
 import 'babel-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
+import './css/styles.css';
 import configureStore from './configureStore';
-import Root from './components/Root'
+import Root from './components/Root';
 
-const store = configureStore();
+const store = configureStore()
 
 render(
 	<Root store={store} />,

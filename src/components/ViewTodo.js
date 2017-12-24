@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import { faTimes, faEdit } from '@fortawesome/fontawesome-free-solid'
 
 class Todo extends Component { 
   constructor(props, context) {
@@ -26,7 +28,7 @@ class Todo extends Component {
 
     return !isEdit ? 
     <li>
-      <div>
+      <div className="task-line">
         <div
           onClick={onClick}
           style={{
@@ -34,24 +36,28 @@ class Todo extends Component {
           }}> 
           {text} 
         </div> 
-        <div onClick={onDelete}> [delete] </div>
-        <div onClick={() => this.setEdit(true)}> [edit] </div>
+        <div className="task-actions"> 
+          <FontAwesomeIcon icon={faEdit} onClick={() => this.setEdit(true)} />
+          <FontAwesomeIcon icon={faTimes} onClick={onDelete} />
+        </div> 
       </div>
     </li> :
     <li> 
-      <form onSubmit={(e) => {
-        e.preventDefault()
-        const value = (name) =>
-        e.target.querySelector(`[name=${name}]`).value
-        console.log(value('text'))
-        onEdit(input.value)
-        this.setEdit(false)
-      }}>
-        <input defaultValue={text} name='text' ref={ node => { input = node }} /> 
-        <button type="submit">
-          Edit Todo
-        </button>
-      </form> 
+      <div className="task-line">
+        <form onSubmit={(e) => {
+          e.preventDefault()
+          const value = (name) =>
+          e.target.querySelector(`[name=${name}]`).value
+          console.log(value('text'))
+          onEdit(input.value)
+          this.setEdit(false)
+        }}>
+          <input defaultValue={text} name='text' ref={ node => { input = node }} /> 
+          <button type="submit">
+            Edit Todo
+          </button>
+        </form> 
+      </div>
     </li>
   }
 };

@@ -22,7 +22,7 @@ export default class TodoList extends Component {
 
 
 
-  	return <div>
+  	return <div className="todo-list">
   	  <ul>
 	    {todos.map(todo =>
 	      isEdit === false ?

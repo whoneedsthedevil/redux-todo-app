@@ -8,12 +8,14 @@ export default {
     filename: 'bundle.js',
     publicPath: '/static/',
   },
+  resolved_paths: ['assets'],
   module: {
-    loaders: [{
-      test: /\.js$/,
-      loaders: ['babel'],
-      exclude: /node_modules/,
-      include: __dirname,
-    }],
+    loaders: [
+      { test: /\.css$/, loader: 'style!css' }, 
+      { test: /\.js$/,
+        loaders: ['babel'],
+        exclude: /node_modules/,
+        include: __dirname,
+      }],
   },
 };
