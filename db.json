@@ -1,7 +1,15 @@
 {
-	"tasks": [{
-		"id": 1,
-		"text": "Learn React",
-		"completed": false
-	}]
+  "tasks": [
+    {
+      "id": 1,
+      "text": "Learn React",
+      "completed": false
+    },
+    {
+      "id": "3b58ee78-e9e7-47c7-b733-81720e8880c1",
+      "text": "Task for Day",
+      "completed": false,
+      "createdAt": 1514108387820
+    }
+  ]
 }

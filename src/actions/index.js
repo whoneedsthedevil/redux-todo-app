@@ -7,6 +7,12 @@ export const addTodo = (text) => ({
     text
 });
 
+export const postTag = (text) => ({
+    type: 'POST_TAG',
+    id: v4(),
+    text
+});
+
 export const editTodo = (id, text) => ({
     type: 'EDIT_TODO',
     id,

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addTodo } from '../actions';
+import { addTodo, postTag } from '../actions';
 
 const AddTodo = ({ dispatch }) => {
   let input;
@@ -15,6 +15,7 @@ const AddTodo = ({ dispatch }) => {
             return;
           }
           dispatch(addTodo(input.value));
+          dispatch(postTag(input.value));
           input.value = '';
         }}
       >
