@@ -1,16 +1,11 @@
 import { v4 } from 'node-uuid';
 
 
-export const addTodo = (text) => ({
+export const addTodo = (text, points) => ({
     type: 'ADD_TODO',
     id: v4(),
-    text
-});
-
-export const postTag = (text) => ({
-    type: 'POST_TAG',
-    id: v4(),
-    text
+    text,
+    points
 });
 
 export const editTodo = (id, text) => ({

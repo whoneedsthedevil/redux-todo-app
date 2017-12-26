@@ -1,25 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addTodo, postTag } from '../actions';
+import { addTodo } from '../actions';
 
 const AddTodo = ({ dispatch }) => {
-  let input;
+  let task, points;
 
   return (
-    <div>
+    <div className="add-input">
+      <div className="labels">
+       <div className="task-text">
+         title
+       </div>
+       <div className="task-points">
+         points
+       </div>
+       
+      </div>  
       <form
         onSubmit={e => {
           e.preventDefault();
-          if (!input.value.trim()) {
+          if (!task.value.trim()) {
             return;
           }
-          dispatch(addTodo(input.value));
-          dispatch(postTag(input.value));
-          input.value = '';
+          dispatch(addTodo(task.value, points.value));
+          task.value = '';
+          points.value = 0;
         }}
       >
-        <input ref={node => { input = node; }} />
+        <input ref={node => { task = node; }} className="task-text" />
+        <input type="number" min="0" ref={node => { points = node; points.value = 0; }} className="task-points" />
         <button type="submit">
           Add Todo
         </button>

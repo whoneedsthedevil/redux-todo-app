@@ -3,12 +3,11 @@ import * as actions from '../actions';
 
 export function* consoleTask(action) {
   try {
-    const taskRequest = yield fetch(`http://localhost:3004/tasks/${action.id}`, {
+    const taskRequest = yield fetch(`http://localhost:3004/tasks/`, {
     		method: "GET"
 	    })
 	    .then(response => {
-	      return response.json()
-	        .then(({ id, text, completed }) =>  ({ id, text, completed }));
+	      return response.json();
 	    })
 	    .catch(error => {
 	      throw error;
@@ -28,6 +27,7 @@ export function* postTask(action) {
     const payload = {
           id: action.id,
           text: action.text,
+          points: action.points,
           completed: false
         };
 
@@ -47,10 +47,10 @@ export function* postTask(action) {
         throw error;
       });
 
-    yield put({ type: 'TAG_POSTING_SUCCESS', taskRequest })
+    yield put({ type: 'ADD_TODO_SUCCESS', taskRequest })
   } 
   catch(err) {
-    yield put({ type: 'TAG_POSTING_FAILED', err })
+    yield put({ type: 'ADD_TODO_FAILED', err })
   }
 }
 
@@ -59,7 +59,7 @@ export function* watchRequest() {
   try {
     while(true) {
   		
-      const loadTags = yield take('LOAD_TAGS')
+      const loadTags = yield take('ADD_TODO_SUCCESS')
 
       yield race([
         call(consoleTask, loadTags),
@@ -74,7 +74,7 @@ export function* watchPostTodo() {
   try {
     while(true) {
       
-      const postTag = yield take('POST_TAG')
+      const postTag = yield take('ADD_TODO')
 
       yield race([
         call(postTask, postTag),

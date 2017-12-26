@@ -17,7 +17,7 @@ export default class TodoList extends Component {
 
   render() {
 
-  const { todos, sagaRequests, onTodoClick, onTodoDelete, onTodoEdit, onLoadTags } = this.props
+  const { todos, onTodoClick, onTodoDelete, onTodoEdit, onLoadTags } = this.props
   const { isEdit } = this.state
 
 
@@ -45,9 +45,7 @@ export default class TodoList extends Component {
 	      
 	    )}
 	  </ul>
-
-      <div onClick={e => onLoadTags(1)}>Click to get redux-saga request: { sagaRequests.task ? sagaRequests.task : 'empty' } </div>
-      </div>;
+    </div>;
 	}
 };
 

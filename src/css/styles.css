@@ -58,19 +58,48 @@ div.container {
 }
 
 div.add-input {
-	padding: 2px;
-	border: 2px solid rgba(130,20,50,.3);
+	display: flex;
+	flex-flow: column nowrap;
+	padding: 20px 2px;
+	border: 2px solid rgba(130,220,50,.5);
+	width: 100%;
 }
 
-div.todo-list ul {
-	margin: 30px auto;
+.add-input form, .add-input .labels {
+	display: flex;
+	flex-flow: row nowrap;
+	height: 2rem;
+	justify-content: space-evenly;
+}
+
+.task-text {
+	width: 14rem;
+}
+.task-points {
+	width: 5rem;
+	text-align: center;
+}
+.labels .task-points {
+	width: 13rem;
+	text-align: left;
+}
+.add-input form button {
+	width: 8rem;
+}
+
+.todo-list {
+	padding: 0 1rem;
+}
+
+.todo-list ul {
+	margin: 1rem auto;
 }
 
 .task-line {
 	display: flex;
 	flex-flow: row nowrap;
+	margin: 1rem;
 }
-
 .task-line .task-actions {
 	margin-left: 12px;
 }

@@ -1,15 +1,25 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "text": "Learn React",
-      "completed": false
+      "id": "c124c4b4-cdc6-4297-b837-d2be35e9438b",
+      "text": "Make gym",
+      "points": "5",
+      "completed": false,
+      "createdAt": 1514302319504
     },
     {
-      "id": "3b58ee78-e9e7-47c7-b733-81720e8880c1",
-      "text": "Task for Day",
+      "id": "5058afc5-c9a7-4582-bbf9-959e1b8d239c",
+      "text": "Eat apple",
+      "points": "2",
       "completed": false,
-      "createdAt": 1514108387820
+      "createdAt": 1514302418795
+    },
+    {
+      "id": "71ba6816-446e-450f-bf7c-cec35ac75410",
+      "text": "Read book",
+      "points": "7",
+      "completed": false,
+      "createdAt": 1514302521225
     }
   ]
 }

@@ -48,7 +48,7 @@ class Todo extends Component {
           e.preventDefault()
           const value = (name) =>
           e.target.querySelector(`[name=${name}]`).value
-          console.log(value('text'))
+          
           onEdit(input.value)
           this.setEdit(false)
         }}>
