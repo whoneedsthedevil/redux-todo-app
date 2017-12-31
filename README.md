@@ -7,4 +7,4 @@ Included redux, redux-saga, font-awesome
 2. npm start
 
 
-## Contributing  ![prwelcome.badge]
+## Contributing  [![GitHub Commits](https://github-basic-badges.herokuapp.com/commits/whoneedsthedevil/redux-todo-app.svg)]()
