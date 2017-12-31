@@ -20,6 +20,13 @@
       "points": "7",
       "completed": false,
       "createdAt": 1514302521225
+    },
+    {
+      "id": "d8a854bd-2dd0-491d-b2bf-ee366e2f5ce1",
+      "text": "Test my task",
+      "points": "5",
+      "completed": false,
+      "createdAt": 1514657353372
     }
   ]
 }
