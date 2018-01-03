@@ -1,5 +1,5 @@
 
-const sagaRequests = (state = {}, action) => {
+const sagaData = (state = {}, action) => {
   switch (action.type) {
     case 'LOAD_TAGS_SUCCESS':
       console.log('%c Current task is:', 'color: DarkOrange', action.taskRequest[action.taskRequest.length - 1]);
@@ -11,4 +11,4 @@ const sagaRequests = (state = {}, action) => {
   }
 };
 
-export default sagaRequests;
+export default sagaData;

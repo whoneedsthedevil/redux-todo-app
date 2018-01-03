@@ -37,7 +37,7 @@ const configureStore = () => {
 	store.subscribe(throttle(() => {
 		saveState({
 			todos: store.getState().todos, 
-      sagaRequests: store.getState().sagaRequests
+      sagaData: store.getState().sagaData
 		});
 	}, 1000));
 

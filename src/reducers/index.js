@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 import todos, * as fromTodos from './todos';
-import sagaRequests from './sagaRequests';
+import sagaData from './sagaRequests';
 
 const todoApp = combineReducers({
-  todos, sagaRequests
+  todos, sagaData
 });
 
 export default todoApp;

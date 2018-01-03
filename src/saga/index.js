@@ -1,7 +1,7 @@
 import { take, put, call, fork, race } from 'redux-saga/effects';
 import * as actions from '../actions';
 
-export function* consoleTask(action) {
+export function* getTask(action) {
   try {
     const taskRequest = yield fetch(`http://localhost:3004/tasks/`, {
     		method: "GET"
@@ -62,7 +62,7 @@ export function* watchRequest() {
       const loadTags = yield take('ADD_TODO_SUCCESS')
 
       yield race([
-        call(consoleTask, loadTags),
+        call(getTask, loadTags),
         take('CANCEL_LOADING')
       ])
   	}
